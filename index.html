@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ali Murad | MERN Stack &amp; AI Automation Engineer</title>
+<meta name="description" content="Ali Murad builds MERN applications, AI assistants and n8n agent workflows. Based in Lahore, Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4fb;--surface:#fff;--ink:#0e1033;--muted:#55587a;--line:#dcdcee;--accent:#5a3cf0;--accent-ink:#fff;--soft:#ebe8ff;--panel:#0e1033;--panel-ink:#eceaff;--panel-mute:#a9acd6;--edge:#4a4d8f;--node:#1a1d52;--mint:#3ddc97;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0b1f;--surface:#141634;--ink:#ecebff;--muted:#a3a6cf;--line:#272a55;--accent:#9b86ff;--accent-ink:#0a0b1f;--soft:#1c1f4a;--panel:#11133a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0b1f;--surface:#141634;--ink:#ecebff;--muted:#a3a6cf;--line:#272a55;--accent:#9b86ff;--accent-ink:#0a0b1f;--soft:#1c1f4a;--panel:#11133a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:40}
+h1,h2,h3,.d{font-family:Syne,"Instrument Sans",system-ui,sans-serif;letter-spacing:-.025em;margin:0;line-height:1}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:var(--accent);z-index:50}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font:800 21px Syne,sans-serif;color:var(--ink);text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--ink)}
+.tb{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px}
+@media(max-width:720px){nav a.h{display:none}}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;padding:64px 0 44px}
+.hero h1{font-size:clamp(76px,15vw,176px);font-weight:800;line-height:.88;letter-spacing:-.045em}
+.hero h1 span{display:block;color:var(--accent)}
+.hero p{color:var(--muted);margin:0 0 24px;max-width:44ch}
+.hero .role{font:700 20px/1.25 Syne,sans-serif;color:var(--ink);margin-bottom:14px;letter-spacing:-.01em}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:40px 0 32px;align-items:start}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);cursor:pointer;font:600 16px "Instrument Sans",sans-serif}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{background:transparent;color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+.panel{background:var(--panel);color:var(--panel-ink);border-radius:26px;padding:26px 26px 22px;border:1px solid var(--line);background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:22px 22px}
+.ph{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.ph b{font:700 18px Syne,sans-serif}
+.ph span{color:var(--panel-mute);font-size:14px}
+.scroll{overflow-x:auto;margin:0 -8px}
+svg{display:block;width:100%;min-width:720px;height:auto}
+.edge{fill:none;stroke:var(--edge);stroke-width:2;stroke-dasharray:5 6}
+.node{cursor:pointer;opacity:0;animation:in .6s ease forwards;animation-delay:calc(var(--i)*.28s)}
+.node rect{fill:var(--node);stroke:var(--edge);stroke-width:1.5;transition:stroke .2s,fill .2s}
+.node:hover rect,.node:focus-visible rect,.node.on rect{stroke:var(--mint);fill:#232766}
+.node .t{fill:var(--panel-ink);font:700 16px Syne,sans-serif;text-anchor:middle}
+.node .u{fill:var(--panel-mute);font:500 12px "Instrument Sans",sans-serif;text-anchor:middle}
+.tag{fill:var(--mint);font:600 13px "Instrument Sans",sans-serif;text-anchor:middle}
+.pk{fill:var(--mint)}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#nd{margin-top:8px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.07);min-height:84px}
+#nd b{display:block;font:700 18px Syne,sans-serif;margin-bottom:4px;color:var(--mint)}
+#nd span{color:var(--panel-ink);font-size:16px}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(36px,6vw,64px);font-weight:800}
+.sub{color:var(--muted);max-width:56ch;margin:16px 0 0}
+.ask{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+@media(max-width:860px){.ask{grid-template-columns:1fr}}
+.qs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.q{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:500 15px "Instrument Sans",sans-serif;cursor:pointer;transition:border-color .2s,background .2s}
+.q:hover{border-color:var(--accent);background:var(--soft)}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px;min-height:340px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:88%;padding:11px 15px;border-radius:16px;font-size:16px;line-height:1.5}
+.m.u{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px}
+.m.a{align-self:flex-start;background:var(--soft);border-bottom-left-radius:4px}
+.hint{color:var(--muted);font-size:15px;margin:auto 0}
+.exp{margin-top:40px;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:center;padding:20px 0}
+summary::-webkit-details-marker{display:none}
+summary h3{font-size:clamp(24px,3.4vw,34px);font-weight:700}
+summary .w{grid-column:1;color:var(--muted);font-weight:500}
+summary .ch{grid-row:1/3;grid-column:2;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:transform .25s,background .2s;font-size:18px}
+details[open] .ch{transform:rotate(45deg);background:var(--soft)}
+details ul{margin:0 0 22px;padding-left:20px;color:var(--muted);max-width:78ch}
+details li{padding-bottom:9px}
+details li b{color:var(--ink)}
+.sk{margin-top:40px}
+.row{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+@media(max-width:720px){.row{grid-template-columns:1fr;gap:12px}}
+.row h3{font-size:20px;font-weight:700;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:500;transition:border-color .2s,transform .2s}
+.chips span:hover{border-color:var(--accent);transform:translateY(-2px)}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+@media(max-width:720px){.edu{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card h3{font-size:24px;margin-bottom:10px;line-height:1.1}
+.card p{margin:0;color:var(--muted)}
+.big{display:block;font:800 clamp(24px,5.6vw,66px)/1.05 Syne,sans-serif;letter-spacing:-.03em;color:var(--ink);text-decoration:none;margin:30px 0 26px;overflow-wrap:anywhere}
+.big:hover{color:var(--accent)}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+@media(max-width:720px){.links{grid-template-columns:1fr}}
+.links a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;color:var(--ink);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.links a:hover{border-color:var(--accent)}
+.links small{display:block;color:var(--muted);font-weight:500;font-size:14px}
+footer{border-top:1px solid var(--line);padding:26px 0 42px;color:var(--muted);font-size:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.node{opacity:1;animation:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="wrap">
+<a class="logo" href="#top">Ali Murad</a>
+<nav><a class="h" href="#workflow">Workflow</a><a class="h" href="#ask">Ask</a><a class="h" href="#experience">Experience</a><a class="h" href="#skills">Skills</a><a href="#contact">Contact</a><button class="tb" id="tt" aria-label="Toggle dark mode">◐</button></nav>
+</div></header>
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<h1>Ali<span>Murad</span></h1>
+<div>
+<div class="role">MERN stack developer and AI automation engineer</div>
+<p>I build web apps that scale, and AI agents that let non-technical people run complex tools by simply chatting. Four years shipping full-stack products from Lahore.</p>
+<div class="cta"><a class="btn p" href="mailto:aliimuradrajput@gmail.com">Hire me</a><a class="btn s" href="#workflow">See how I work</a></div>
+</div>
+</div>
+<div class="panel" id="workflow">
+<div class="ph"><b>One request, end to end</b><span>Select any node to see what I build there.</span></div>
+<div class="scroll"><svg viewBox="0 0 900 320" role="group" aria-label="Automation workflow diagram">
+<path id="e1" class="edge" d="M160 160H260"/><path id="e2" class="edge" d="M400 160C470 160 440 90 500 90"/><path id="e3" class="edge" d="M640 90H740"/><path id="e4" class="edge" d="M400 160C470 160 440 230 500 230"/><path id="e5" class="edge" d="M640 230H740"/>
+<g id="pks">
+<circle class="pk" r="5"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.6s"><mpath href="#e1"/></animateMotion></circle>
+<circle class="pk" r="5"><animateMotion dur="2.2s" repeatCount="indefinite" begin="2s"><mpath href="#e2"/></animateMotion></circle>
+<circle class="pk" r="5"><animateMotion dur="1.8s" repeatCount="indefinite" begin="2.4s"><mpath href="#e3"/></animateMotion></circle>
+<circle class="pk" r="5"><animateMotion dur="2.2s" repeatCount="indefinite" begin="2.6s"><mpath href="#e4"/></animateMotion></circle>
+<circle class="pk" r="5"><animateMotion dur="1.8s" repeatCount="indefinite" begin="3s"><mpath href="#e5"/></animateMotion></circle>
+</g>
+<g class="node" style="--i:0" tabindex="0" role="button" data-k="0" transform="translate(20,131)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">Trigger</text><text class="u" x="70" y="45">chat · webhook · schedule</text></g>
+<g class="node" style="--i:1" tabindex="0" role="button" data-k="1" transform="translate(260,131)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">AI agent</text><text class="u" x="70" y="45">n8n · LLM</text></g>
+<g class="node" style="--i:2" tabindex="0" role="button" data-k="2" transform="translate(500,61)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">MCP</text><text class="u" x="70" y="45">tool access</text></g>
+<g class="node" style="--i:3" tabindex="0" role="button" data-k="3" transform="translate(740,61)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">WordPress</text><text class="u" x="70" y="45">content · settings</text></g>
+<g class="node" style="--i:4" tabindex="0" role="button" data-k="4" transform="translate(500,201)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">Node API</text><text class="u" x="70" y="45">Express · MongoDB</text></g>
+<g class="node" style="--i:5" tabindex="0" role="button" data-k="5" transform="translate(740,201)"><rect width="140" height="58" rx="16"/><text class="t" x="70" y="27">Slack</text><text class="u" x="70" y="45">notifications</text></g>
+<text class="tag" x="330" y="216">40% less manual work</text>
+<text class="tag" x="810" y="286">25% faster replies</text>
+</svg></div>
+<div id="nd" aria-live="polite"><b>AI agent</b><span>The reasoning layer. I architect agent workflows in n8n that decide which tools to call, cutting manual operational overhead by 40%.</span></div>
+</div>
+</div>
+
+<section id="ask"><div class="wrap ask">
+<div>
+<h2>Ask about Ali</h2>
+<p class="sub">Pick a question. Answers come straight from my CV.</p>
+<div class="qs" id="qs"></div>
+</div>
+<div class="chat" id="chat" aria-live="polite"><p class="hint" id="hint">Choose a question to start.</p></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<h2>Experience</h2>
+<p class="sub">Open a role to see what I shipped.</p>
+<div class="exp">
+<details open><summary><h3>Web Developer</h3><span class="ch" aria-hidden="true">+</span><span class="w">Nayyar Technologies Ltd · Aug 2022 to present</span></summary>
+<ul>
+<li><b>AI agents and automation:</b> n8n workflows for notifications, data syncing and integrations, cutting manual overhead by 40%.</li>
+<li><b>MCP-connected assistants:</b> WordPress managed through a conversational AI, with no technical steps for users.</li>
+<li><b>AI chatbots:</b> LLM-powered assistants inside MERN apps with custom backend logic.</li>
+<li><b>React, Node.js, MongoDB:</b> SPAs with hooks and Context API, Express APIs, MongoDB schema design.</li>
+<li><b>GrapesJS custom CMS:</b> script and style tabs, block management and plugin integrations for drag-and-drop page building.</li>
+<li><b>Front end and WordPress:</b> accessible UI with HTML5, Flexbox, Grid and SCSS; custom themes and plugins with SEO best practices; Git on Bitbucket, sprints in Jira.</li>
+</ul></details>
+<details><summary><h3>Software Engineer</h3><span class="ch" aria-hidden="true">+</span><span class="w">Ipak International · Nov 2021 to Nov 2022</span></summary>
+<ul>
+<li><b>Full stack:</b> React dashboards and admin panels; optimized MySQL schemas, complex queries and data migrations.</li>
+<li><b>Payments:</b> Stripe and PayPal with secure authentication for subscription services.</li>
+<li><b>Systems:</b> Xtreme UI and IPTV panels, Android box provisioning, control logic for real-time monitoring dashboards.</li>
+<li><b>WordPress and UX:</b> turned wireframes into working interfaces and applied usability-testing feedback.</li>
+</ul></details>
+<details><summary><h3>Customer Service Representative</h3><span class="ch" aria-hidden="true">+</span><span class="w">Mindbridge Private Limited · Apr 2020 to May 2021</span></summary>
+<ul>
+<li><b>Client support:</b> Level 1 technical support for Foodpanda’s international campaign across seven countries.</li>
+<li><b>Process improvement:</b> scheduled Slack updates that improved inter-departmental response times by 25%.</li>
+</ul></details>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="sk">
+<div class="row"><h3>AI and automation</h3><div class="chips"><span>AI assistants and chatbots</span><span>LLM integration</span><span>n8n workflows</span><span>Agent orchestration</span><span>MCP</span><span>Third-party APIs</span></div></div>
+<div class="row"><h3>Languages and frameworks</h3><div class="chips"><span>JavaScript</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>PHP</span><span>Laravel</span><span>C++</span><span>jQuery</span><span>HTML5</span><span>CSS/SCSS</span><span>Bootstrap</span><span>EJS</span></div></div>
+<div class="row"><h3>Databases and tools</h3><div class="chips"><span>MongoDB</span><span>MySQL</span><span>WordPress</span><span>GrapesJS</span><span>Git</span><span>Bitbucket</span><span>Jira</span><span>Photoshop</span></div></div>
+<div class="row"><h3>Core strengths</h3><div class="chips"><span>OOP</span><span>Data structures and algorithms</span><span>PSD to HTML</span><span>Debugging and profiling</span><span>Domain management</span><span>Communication</span><span>Problem solving</span></div></div>
+</div>
+<div class="edu">
+<div class="card"><h3>Bachelor’s in Computer Software Engineering</h3><p>Virtual University of Pakistan · April 2020 · CGPA 3.23</p></div>
+<div class="card"><h3>Diploma in Computer Science</h3><p>MERN Stack Development · Systems Limited</p></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Let’s build something</h2>
+<a class="big" href="mailto:aliimuradrajput@gmail.com">aliimuradrajput@gmail.com</a>
+<div class="cta"><a class="btn p" href="mailto:aliimuradrajput@gmail.com">Send an email</a><button class="btn s" id="cp" type="button">Copy email</button></div>
+<div class="links">
+<a href="tel:+923066074495"><small>Phone</small>+92 306 6074495</a>
+<a href="https://www.linkedin.com/in/ali-murad-584794220" target="_blank" rel="noopener"><small>LinkedIn</small>ali-murad-584794220</a>
+<a href="#top"><small>Based in</small>Lahore, Punjab, Pakistan</a>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr">2026</span> Ali Murad</div></footer>
+<script>
+(function(){
+var R=document.documentElement,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.getElementById('tt').onclick=function(){var d=R.getAttribute('data-theme')==='dark'||(!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);R.setAttribute('data-theme',d?'light':'dark')};
+document.getElementById('yr').textContent=new Date().getFullYear();
+var bar=document.getElementById('bar');
+function pr(){var h=R.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%'}
+addEventListener('scroll',pr,{passive:true});pr();
+if(rm){var p=document.getElementById('pks');if(p)p.remove()}
+var N=[
+["Trigger","Every run starts somewhere: a chat message, a webhook or a schedule. I wire these into n8n so work starts without anyone clicking through a dashboard."],
+["AI agent","The reasoning layer. I architect agent workflows in n8n that decide which tools to call, cutting manual operational overhead by 40%."],
+["MCP","The Model Context Protocol exposes real site actions as tools the assistant can use, so third-party systems become controllable through conversation."],
+["WordPress","Users manage content and settings by chatting. No technical steps. I also build custom themes and plugins with SEO best practices."],
+["Node API","Custom backend logic behind the AI: Node.js and Express services, MongoDB schemas, and RESTful APIs for MERN applications."],
+["Slack","Notifications and scheduled updates. At Mindbridge, scheduled Slack updates improved inter-departmental response times by 25%."]];
+var nodes=document.querySelectorAll('.node'),nd=document.getElementById('nd');
+function sel(n){nodes.forEach(function(x){x.classList.remove('on')});n.classList.add('on');var d=N[+n.dataset.k];nd.innerHTML='<b></b><span></span>';nd.firstChild.textContent=d[0];nd.lastChild.textContent=d[1]}
+nodes.forEach(function(n){n.addEventListener('click',function(){sel(n)});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();sel(n)}})});
+nodes[1].classList.add('on');
+var Q=[
+["What do you build?","I build MERN applications and the AI layer around them: LLM chatbots, n8n agent workflows, and MCP-connected assistants that let non-technical users manage tools by chatting."],
+["What is your core stack?","React on the front end, Node.js and Express for APIs, and MongoDB or MySQL for data. On top of that I use n8n for automation and MCP to connect AI to real systems."],
+["Have you worked with AI agents?","Yes, daily. At Nayyar Technologies I architect n8n agent workflows that cut manual operational overhead by 40%, and I connect WordPress management to a conversational assistant through MCP."],
+["Have you shipped payments?","Yes. At Ipak International I integrated Stripe and PayPal with secure authentication for subscription services."],
+["Are you open to work?","Yes, with growth-oriented engineering teams. The fastest way to reach me is aliimuradrajput@gmail.com or +92 306 6074495."]];
+var qs=document.getElementById('qs'),chat=document.getElementById('chat'),busy=false;
+Q.forEach(function(q,i){var b=document.createElement('button');b.className='q';b.type='button';b.textContent=q[0];b.onclick=function(){ask(i)};qs.appendChild(b)});
+function bub(c,t){var d=document.createElement('div');d.className='m '+c;d.textContent=t;chat.appendChild(d);return d}
+function ask(i){if(busy)return;var h=document.getElementById('hint');if(h)h.remove();bub('u',Q[i][0]);var a=bub('a','');
+if(rm){a.textContent=Q[i][1];return}
+busy=true;var s=Q[i][1],k=0;(function t(){k+=2;a.textContent=s.slice(0,k);if(k<s.length)setTimeout(t,16);else busy=false})()}
+document.getElementById('cp').onclick=function(){var b=this;try{navigator.clipboard.writeText('aliimuradrajput@gmail.com').then(function(){b.textContent='Copied'},function(){b.textContent='Copy failed'})}catch(e){b.textContent='Copy failed'}setTimeout(function(){b.textContent='Copy email'},2000)};
+})();
+</script>
+</body>
+</html>
